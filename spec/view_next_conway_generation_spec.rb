@@ -66,9 +66,13 @@ describe "how to calculate number of live neighbours in a conway grid" do
   it "should tell me there is zero live neighbours in a 1x2 grid if home cell is at (1,0)" do
     expect(number_of_living_neigbours(one_col_x_two_row, row:1, column:0)).to eq 1
   end
-  it "should tell me there is zero live neighbours in a 2x2 grid if home cell is at (2,2)" do
-    expect(number_of_living_neigbours(two_col_x_two_row, row:2, column:2)).to eq 2
-  endfor
+  it "should tell me there are zero live neighbours in a 2x2 grid if home cell is at (2,2)" do
+    expect(number_of_living_neigbours(two_col_x_two_row, row:1, column:1)).to eq 2
+  end
+  it "should tell me there are 3 live neighbours in a 3x3 grid if home cell is at (1,1)" do
+    expect(number_of_living_neigbours(three_col_x_three_row, row:1, column:1)).to eq 3
+  end
+
   # xit "should tell me how many live neighbour if one alive in a 1x2 grid" do
     
   #   expect(number_of_living_neigbours(one_col_x_two_row, row:0, column:0)).to eq 1

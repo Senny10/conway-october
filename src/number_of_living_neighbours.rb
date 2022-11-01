@@ -1,21 +1,61 @@
 def number_of_living_neigbours(grid,row:,column:)
+
   count = 0
-  for r in grid do
-    for cell in r do
-      if (cell == :alive)
-        count += 1
-      end
+  if ( grid[row-1]) 
+    if (grid[row-1][column-1] == :alive)
+      count += 1
     end
   end
-  
+
+  if (grid[row-1])
+    if (grid[row-1][column] == :alive)
+      count += 1
+    end
+  end
+
+  if (grid[row-1])
+    if (grid[row-1][column+1] == :alive)
+      count += 1
+    end
+  end
+
+  if (grid[row])
+    if (grid[row][column-1] == :alive)
+      count += 1
+    end
+  end
+
+  if (grid[row+1])
+    if(grid[row+1][column-1] == :alive)
+      count += 1
+    end
+  end
+
+  if (grid[row+1])
+    if(grid[row+1][column] == :alive)
+      count += 1
+    end
+  end
+
+  if (grid[row+1])
+    if(grid[row+1][column+1] == :alive)
+      count += 1
+    end
+  end
+
+  if (grid[row])
+    if(grid[row][column+1] == :alive)
+      count += 1
+    end
+  end      
+
   return count
-  # if ((row == 0 && column == 0) || (row == 1 && column == 0))
-  #   return 1
-  # elsif (row == 2 && column == 2)
-  #   return 2
-  # else
-  #   return 0
-  # end
+
+  # [(0,0), (0,1), (0,2)],
+  # [(1,0), (1,1), (1,2)],
+  # [(2,0), (2,1), (2,2)]
+
+
 end
 
 
